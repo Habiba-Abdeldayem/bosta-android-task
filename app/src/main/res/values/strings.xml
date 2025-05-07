@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">BostaCitiesApp</string>
+    <string name="zone_district_format">%1$s - %2$s</string>
+    <string name="choose_pickup">Choose the pickup area</string>
+    <string name="uncovered">Uncovered</string>
+</resources>
