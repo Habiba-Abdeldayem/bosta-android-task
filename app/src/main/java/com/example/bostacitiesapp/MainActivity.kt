@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.compose.ui.res.stringResource
 import androidx.core.widget.doAfterTextChanged
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.ViewModelProvider
@@ -67,7 +68,7 @@ class MainActivity : AppCompatActivity() {
                                 binding.progressBar.visibility = View.GONE
                                 Toast.makeText(
                                     this@MainActivity,
-                                    "Error: ${result.exception.message}",
+                                    getString(R.string.check_internet),
                                     Toast.LENGTH_SHORT
                                 ).show()
                             }
