@@ -3,4 +3,5 @@
     <string name="zone_district_format">%1$s - %2$s</string>
     <string name="choose_pickup">Choose the pickup area</string>
     <string name="uncovered">Uncovered</string>
+    <string name="check_internet">Check Your Internet Connectivity</string>
 </resources>

@@ -3,28 +3,29 @@ package com.example.bostacitiesapp
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
-import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.doAfterTextChanged
 import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.bostacitiesapp.databinding.ActivityMainBinding
 import com.example.bostacitiesapp.model.ApiResult
 import com.example.bostacitiesapp.ui.adapter.CitiesAdapter
-import com.example.bostacitiesapp.ui.viewmodel.CitiesViewModel
+import com.example.bostacitiesapp.ui.viewmodel.MainViewModel
 import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
-    private val viewModel: CitiesViewModel by viewModels()
     private lateinit var adapter: CitiesAdapter
-
+    private lateinit var viewModel: MainViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        val app = application as BostaApp
+        viewModel = ViewModelProvider(this, app.factory)[MainViewModel::class.java]
 
         setupRecyclerView()
         setupSearch()

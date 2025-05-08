@@ -4,8 +4,9 @@ import com.example.bostacitiesapp.data.api.BostaApiService
 import com.example.bostacitiesapp.model.ApiResult
 import com.example.bostacitiesapp.model.City
 
-class CitiesRepository(private val apiService: BostaApiService) {
-    suspend fun getCities(): ApiResult<List<City>> {
+class CitiesRepository(private val apiService: BostaApiService): CitiesRepositoryInterface {
+
+    override suspend fun getCitiesAndDistricts(): ApiResult<List<City>> {
         return try {
             val response = apiService.getAllDistricts()
             if(response.success) {

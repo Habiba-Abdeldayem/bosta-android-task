@@ -29,6 +29,14 @@ class CitiesAdapter(
                 isNestedScrollingEnabled = false // critical for nested RV
             }
         }
+//        private val districtsAdapter = DistrictsAdapter()
+//
+//        init {
+//            binding.rvDistricts.setHasFixedSize(true)
+//            binding.rvDistricts.itemAnimator = null
+//            binding.rvDistricts.layoutManager = LinearLayoutManager(binding.root.context)
+//            binding.rvDistricts.adapter = districtsAdapter
+//        }
 
         fun bind(city: City) {
             binding.city = city
